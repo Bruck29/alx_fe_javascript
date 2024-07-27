@@ -1,16 +1,17 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Dynamic Quote Generator</title>
+  <title>Dynamic Quote Generator</title>
 </head>
 <body>
-    <h1>Dynamic Quote Generator</h1>
-    <ul id="quoteList"></ul>
-    <input type="text" id="newQuote" placeholder="Enter a new quote">
-    <button onclick="addQuote()">Add Quote</button>
-    <button onclick="exportToJsonFile()">Export Quotes to JSON</button>
-    <input type="file" id="importFile" accept=".json" onchange="importFromJsonFile(event)" />
+  <h1>Dynamic Quote Generator</h1>
+  <ul id="quoteList"></ul>
+  <input type="text" id="newQuote" placeholder="Enter a new quote" />
+  <input type="text" id="quoteCategory" placeholder="Enter quote category" />
+  <button onclick="addQuote()">Add Quote</button>
+  <button onclick="exportToJsonFile()">Export Quotes to JSON</button>
+  <input type="file" id="importFile" accept=".json" onchange="importFromJsonFile(event)" />
+  <button onclick="showRandomQuote()">Show Random Quote</button>
+  <p id="randomQuote"></p>
 </body>
 </html>
