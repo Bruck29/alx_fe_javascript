@@ -22,7 +22,7 @@ function syncQuotes(serverQuotes) {
   document.getElementById('syncMessage').textContent = "Quotes synced with server!";
 }
 
-setInterval(fetchQuotesFromServer, 10000); // Fetch new data every 10 seconds
+setInterval(fetchQuotesFromServer, 10000);
 
 document.addEventListener('DOMContentLoaded', () => {
   createAddQuoteForm();
@@ -88,15 +88,15 @@ async function postQuoteToServer(quote) {
 }
 
 function displayQuotes() {
-  const quoteList = document.getElementById('quoteList');
-  quoteList.innerHTML = '';
+  const quoteDisplay = document.getElementById('quoteDisplay');
+  quoteDisplay.innerHTML = '';
   const selectedCategory = localStorage.getItem('selectedCategory') || 'all';
   quotes.forEach((quote, index) => {
     if (selectedCategory === 'all' || quote.category === selectedCategory) {
       const li = document.createElement('li');
       li.textContent = `"${quote.text}" - ${quote.category}`;
-      quoteList.appendChild(li);
-      li.onclick = () => saveLastViewedQuote(index); // Save the last viewed quote
+      quoteDisplay.appendChild(li);
+      li.onclick = () => saveLastViewedQuote(index);
     }
   });
 }
