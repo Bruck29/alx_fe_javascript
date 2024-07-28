@@ -1,5 +1,26 @@
 let quotes = JSON.parse(localStorage.getItem('quotes')) || [];
 
+function createAddQuoteForm() {
+  const formContainer = document.getElementById('addQuoteForm');
+  const quoteInput = document.createElement('input');
+  quoteInput.type = 'text';
+  quoteInput.id = 'newQuote';
+  quoteInput.placeholder = 'Enter a new quote';
+  
+  const categoryInput = document.createElement('input');
+  categoryInput.type = 'text';
+  categoryInput.id = 'quoteCategory';
+  categoryInput.placeholder = 'Enter quote category';
+  
+  const addButton = document.createElement('button');
+  addButton.textContent = 'Add Quote';
+  addButton.onclick = addQuote;
+  
+  formContainer.appendChild(quoteInput);
+  formContainer.appendChild(categoryInput);
+  formContainer.appendChild(addButton);
+}
+
 function addQuote() {
   const quoteInput = document.getElementById('newQuote');
   const categoryInput = document.getElementById('quoteCategory');
@@ -75,6 +96,7 @@ function showRandomQuote() {
 }
 
 document.addEventListener('DOMContentLoaded', () => {
+  createAddQuoteForm(); // Create the add quote form on page load
   displayQuotes();
-  loadLastViewedQuote(); // 
+  loadLastViewedQuote(); // Load the last viewed quote on page load
 });

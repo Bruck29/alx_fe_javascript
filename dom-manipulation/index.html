@@ -5,10 +5,8 @@
 </head>
 <body>
   <h1>Dynamic Quote Generator</h1>
+  <div id="addQuoteForm"></div> <!-- Container for the add quote form -->
   <ul id="quoteList"></ul>
-  <input type="text" id="newQuote" placeholder="Enter a new quote" />
-  <input type="text" id="quoteCategory" placeholder="Enter quote category" />
-  <button onclick="addQuote()">Add Quote</button>
   <button onclick="exportToJsonFile()">Export Quotes to JSON</button>
   <input type="file" id="importFile" accept=".json" onchange="importFromJsonFile(event)" />
   <button onclick="showRandomQuote()">Show Random Quote</button>
